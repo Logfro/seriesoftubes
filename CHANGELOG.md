@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+- Fill a fiber link with one transceiver type using the new All button beside its add button, with the available channel count and total price shown before purchase.
+
 ## [1.35.0] — 2026-10-27
 
 - Series of Tubes now speaks Spanish. The game follows your browser's language the first time, and you can switch to Spanish under Settings or on the title screen.

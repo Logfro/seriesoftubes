@@ -10,7 +10,7 @@ function dfAllowed(a,b){if(isSub(a,b))return !!subDfCable(a,b);return cnCity(a)=
 /* Optics you unplug go on a spares shelf instead of in the bin (#45): the next channel of that type uses a spare
    for free (only the regen sites' transponders are new), or you sell it on eBuy for part of the price. */
 const SPARE_RESALE=0.4,spareN=o=>(S&&S.spares&&S.spares[o])|0,spareValue=o=>Math.round(optCost(o)*SPARE_RESALE);
-function chCost(l,o){const r=REGEN_CH*(l.regen|0);return Math.round(optCost(o)*(spareN(o)>0?r:1+r));}
+function chCost(l,o,spares=spareN(o)){const r=REGEN_CH*(l.regen|0);return Math.round(optCost(o)*(spares>0?r:1+r));}
 function optCost(o){return Math.round(OPT[o].cost*hwMul('opt')*(S&&S.ev&&S.ev.tariff>S.day?1.4:1));}
 // Line systems upgrade in place: Rainbow → ROADMaster → C+L. Every lit pair gets the new gear.
 const sysNext=l=>l.sys==='lite'?'roadm':l.sys==='roadm'?'cl':null,sysUpCost=l=>{const t=sysNext(l);return t?DF_SYS[t].cost*(t==='cl'&&l.own?Math.max(1,l.pairs|0):1):0;};
