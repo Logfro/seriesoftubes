@@ -44,7 +44,7 @@ function renderLeft(){checkLayer();
     if(!S.offers.length)h+=`<p class="empty">${tr('hud_and_panels.no_open_offers_right_now_businesses')}</p>`;
     for(const o of S.offers.slice().sort((a,b)=>a.exp-b.exp)){const has=bHas(o);
       h+=`<div class="row"><div class="grow"><div class="nm">${esc(o.name)}</div><div class="meta">${esc(BIZ_T[o.type].l)} · ${CITY[o.city].name}${o.city2?' ⇄ '+CITY[o.city2].name:''} · <b>${bTerms(o)}</b> · ${tr('ui.n_d_left',{n:o.exp-S.day})}${(o.reqs||[]).length?` · ${trn('hud_and_panels.n_special_requirement',o.reqs.length)}`:''}</div>${reqList(o)}
-      <div class="btns">${has?btn(autoAcceptLabel(),'accept',{id:o.id},'green sm'):btn(tr('common.go_there'),'focusCity',{city:bCities(o).find(c=>!S.pops[c])},'ghost sm')}${btn(tr('common.decline'),'decline',{id:o.id},'ghost sm')}</div>${has?'':`<div class="why">${tr('hud_and_panels.needs_a_pop_in_cities',{cities:bCities(o).filter(x=>!S.pops[x]).map(x=>CITY[x].name).join(', ')})}</div>`}</div></div>`;}
+      <div class="btns">${has?btn(autoAcceptLabel(o),'accept',{id:o.id},'green sm'):btn(tr('common.go_there'),'focusCity',{city:bCities(o).find(c=>!S.pops[c])},'ghost sm')}${btn(tr('common.decline'),'decline',{id:o.id},'ghost sm')}</div>${has?'':`<div class="why">${tr('hud_and_panels.needs_a_pop_in_cities',{cities:bCities(o).filter(x=>!S.pops[x]).map(x=>CITY[x].name).join(', ')})}</div>`}</div></div>`;}
   }else if(UI.left==='noc'){
     h+=`<div class="btns" style="margin-bottom:8px">${btn(tr('hud_and_panels.open_noc_dashboard'),'dash',{},'pink')}${btn(tr('common.connections'),'connOpen',{},'')}${btn(tr('common.traceroute'),'trace',{},'')}</div>`;
     h+=`<p class="lead">${tr('hud_and_panels.your_network_operations_center_every')}</p>`;
