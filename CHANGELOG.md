@@ -6,6 +6,9 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+- Toggle auto-accept in Deals to check ready sales every five real seconds, including their requirements and available service capacity, with a countdown beside each Accept button.
+- Toggle auto-pay repairs in the NOC to pay for affordable rush repairs automatically while the game runs.
+
 ## [1.35.0] — 2026-10-27
 
 - Series of Tubes now speaks Spanish. The game follows your browser's language the first time, and you can switch to Spanish under Settings or on the title screen.
