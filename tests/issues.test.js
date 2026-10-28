@@ -331,7 +331,8 @@ test('#40 overland between continents costs ten times subsea or more, and has no
     const sub=waveMo(c.km,true,2)*CAB[c.cid].price*waveMarket(c.a,c.b,true).m;return [land/sub,!!(CITY[c.a].land2||CITY[c.b].land2)];}))`));
   assert.ok(r.length >= 4, 'Europe–Asia cable routes exist to compare');
   // Across a land bridge (Cairo, #47) the cable goes the long way round Arabia, so overland is "only" 4–9× dearer.
-  for (const [x, bridge] of r) assert.ok(x >= (bridge ? 4 : 10), `overland is at least ${bridge ? 4 : 10}× subsea (${x.toFixed(1)})`);
+  // EIG from Dubai now follows Arabia and the Suez Canal at sea, which makes it a little longer: 9.97× (#183).
+  for (const [x, bridge] of r) assert.ok(x >= (bridge ? 4 : 9.5), `overland is at least ${bridge ? 4 : 9.5}× subsea (${x.toFixed(1)})`);
   assert.equal(ev("landX('mrs','hkg')"), true);
   assert.equal(ev("landX('fra','mrs')"), false, 'inside Europe stays normal');
   assert.equal(ev("landMult('fra','mrs')"), 1);

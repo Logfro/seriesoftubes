@@ -786,8 +786,9 @@ test('Atlantic islands and Halifax: real landings, real exchanges only, and isla
   assert.equal(hop(['mia', 'pdl', 'lis']), 1600, 'Florida to Lisbon via the Azores');
   assert.equal(direct('atn', 'lis'), 1200);
   assert.equal(hop(['atn', 'bda', 'lis']), 1600);
-  assert.equal(direct('lis', 'lag'), 1200);
+  // Equi-yes follows the coast close enough to fit 1.6T on its own; the Canaries hop matches it
   assert.equal(hop(['lis', 'tci', 'lag']), 1600, 'Lisbon to Lagos via the Canaries');
+  assert.ok(hop(['lis', 'tci', 'lag']) >= direct('lis', 'lag'));
   assert.equal(direct('for', 'mad'), 1200);
   assert.equal(hop(['for', 'rai', 'lis']), 1600, 'Brazil to Europe via Cape Verde');
   assert.equal(hop(['nyc', 'hfx']), 3200);
