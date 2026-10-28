@@ -6,6 +6,8 @@ All notable changes to this project are documented here. The project follows
 
 ## [Unreleased]
 
+- Order PNIs with one network or every network at all shared POPs from the NOC Traffic tab: choose a port size, review the total cost, and add missing connections or upgrade smaller ones in one go.
+
 ## [1.35.0] — 2026-10-27
 
 - Series of Tubes now speaks Spanish. The game follows your browser's language the first time, and you can switch to Spanish under Settings or on the title screen.
