@@ -8,6 +8,18 @@ All notable changes to this project are documented here. The project follows
 
 - Order PNIs with one network or every network at all shared POPs from the NOC Traffic tab: choose a port size, review the total cost, and add missing connections or upgrade smaller ones in one go.
 
+## [1.36.0] — 2026-10-28
+
+- You can put a link on standby, so one of two links between the same cities sits idle as a backup (#122). It carries traffic only when the other links are full or down, so its capacity is never wasted, and the map draws it dashed while it waits. The routing metric still applies to every link between the two cities.
+- Start anywhere: the new game screen lists the five suggested home cities as a compact stack, and the last entry lets you pick any city on the map that sells transit, grouped by continent. Below the big start button, How to play, Import a save and Settings are now the same size.
+- Language is now a dropdown on the title screen and in Settings, with each language named in itself. On phones it opens the system picker.
+- Every new network starts at ½ speed, so you can find your feet before the bills arrive (#186). Saved games still continue at the speed you left them.
+
+## [1.35.1] — 2026-10-28
+
+- Subsea cables stay at sea: Pacific cables no longer draw a line across the whole world where the map wraps round (#183), and over 170 cable routes that cut across Africa, Arabia, India, Brazil and other coasts now follow the sea. Cables into inland cities like Paris, Dublin and Hong Kong come ashore at the nearest coast.
+- Found a bug or have an idea? The menu and How to play now link straight to the forms on GitHub, where every report is tracked. The Signal group stays for chatting.
+
 ## [1.35.0] — 2026-10-27
 
 - Series of Tubes now speaks Spanish. The game follows your browser's language the first time, and you can switch to Spanish under Settings or on the title screen.
